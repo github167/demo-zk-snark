@@ -1,54 +1,20 @@
-#extract from https://github.com/iden3/circom/blob/master/TUTORIAL.md
-git clone https://github.com/iden3/snarkjs
-cd snarkjs
-npm install
-cd build
+# https://github.com/Zokrates/ZoKrates
+curl -LSfs get.zokrat.es | sh
 
-wget https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_10.ptau
-
-npm install -g circom
-npm install -g snarkjs
-
-cat << EOF > circuit.circom
-template Multiplier() {
-    signal private input a;
-    signal private input b;
-    signal output c;
-
-    c <== a*b;
-}
-component main = Multiplier();
-EOF
-cat << EOF > input.json
-{"a": 3, "b": 11}
+cat << EOF >root.zok
+def main(private field a, field b) -> bool:
+  return a * a == b
 EOF
 
-# gen circuit
-circom circuit.circom --r1cs --wasm --sym
-snarkjs r1cs info circuit.r1cs
-snarkjs r1cs print circuit.r1cs circuit.sym
-snarkjs r1cs export json circuit.r1cs circuit.json
-
-# gen proof and verification keys
-snarkjs zkey new circuit.r1cs powersOfTau28_hez_final_10.ptau circuit_final.zkey
-
-# gen sol
-snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
-
-# gen proof.json public.json
-snarkjs groth16 fullprove input.json circuit.wasm circuit_final.zkey
-
-#extract verification key
-snarkjs zkey export verificationkey circuit_final.zkey verification_key.json
-
-# verify!
-snarkjs groth16 verify verification_key.json public.json proof.json
-
-# gen witness
-snarkjs wtns calculate circuit.wasm input.json witness.wtns
-snarkjs wtns export json witness.wtns witness.json
-cat witness.json
-
-# gen proof.json and public.json through witness.wtns
-
-snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json
+# compile
+zokrates compile -i root.zok
+# perform the setup phase
+zokrates setup
+# execute the program
+zokrates compute-witness -a 337 113569
+# generate a proof of computation
+zokrates generate-proof
+# export a solidity verifier
+zokrates export-verifier
+# or verify natively
+zokrates verify
