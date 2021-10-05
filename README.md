@@ -3,8 +3,7 @@ Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/node
 
 1. zokrates
 ```
-export PATH=$PATH:/root/.zokrates/bin
-curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/zokrates-demo/init.sh | sh
+curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/hello-world-zk-app/init.sh | sh
 
 
 ```
