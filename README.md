@@ -1,7 +1,10 @@
 
 Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
 
-1. snarkjs
+1. zokrates
 ```
-curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/snarkjs-demo/init.sh | sh
+export PATH=$PATH:/root/.zokrates/bin
+curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/zokrates-demo/init.sh | sh
+
+
 ```
