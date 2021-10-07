@@ -2,7 +2,7 @@ git clone https://github.com/kendricktan/hello-world-zk-dapp.git
 cd hello-world-zk-dapp
 npm install
 
-cat << 'EOF' > packages/script/abc.js
+cat << 'EOF' > packages/scripts/abc.js
 const zkSnark = require("snarkjs");
 const compiler = require("circom");
 const fs = require('fs'); 
