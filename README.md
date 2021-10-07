@@ -15,3 +15,4 @@ npm run start
 ```
 (cd packages/scripts/; node abc.js)
 ```
+4. Document of snarkjs: https://iden3-docs.readthedocs.io/en/latest/iden3_repos/snarkjs/README.html
