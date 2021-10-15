@@ -6,13 +6,40 @@ Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/node
 curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/mastermind/init.sh | sh
 ```
 
-2. test
+2. test from official js
 ```
-npm run start
+node build/mastermind/src/compile.js \
+  -i mastermind/circuits/mastermind.circom \
+  -o mastermind/circuits/mastermind.json -r
+
+mkdir -p mastermind/setup && \
+node build/mastermind/src/trustedsetup.js \
+  -i mastermind/circuits/mastermind.json \
+  -pk mastermind/setup/mastermind.pk.json \
+  -vk mastermind/setup/mastermind.vk.json -r
+
+mkdir -p mastermind/proofs mastermind/signals && \
+node build/mastermind/src/generateproof.js \
+  -c mastermind/circuits/mastermind.json \
+  -vk mastermind/setup/mastermind.vk.json \
+  -pk mastermind/setup/mastermind.pk.json \
+  -po mastermind/proofs/mastermind.proof.json \
+  -so mastermind/signals/testsignals.json
+
+node build/mastermind/src/test_js_verification.js \
+  -c mastermind/circuits/mastermind.json \
+  -vk mastermind/setup/mastermind.vk.json \
+  -p mastermind/proofs/mastermind.proof.json \
+  -s mastermind/signals/testsignals.json
+
 ```
 
 3. generate our own keys and test
 ```
-(cd packages/scripts/; node abc.js)
+cd my
+node 1-compile.js
+node 2-pkvk.js
+node 3-genProof.js
+node 4-verify.js
 ```
-4. Document of snarkjs: https://iden3-docs.readthedocs.io/en/latest/iden3_repos/snarkjs/README.html
+
