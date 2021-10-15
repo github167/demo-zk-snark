@@ -138,12 +138,14 @@ const main = async function () {
     const proof = utils_1.unstringifyBigInts(JSON.parse(fs_1.readFileSync(proofFile, "utf8")));
     const publicSignals = utils_1.unstringifyBigInts(JSON.parse(fs_1.readFileSync(publicSignalsFile, "utf8")));
     const circuitDef = JSON.parse(fs_1.readFileSync(circuitFile, "utf8"));
+    /*
     console.log(new Date(), 'Loading circuit');
     const circuit = new snarkjs.Circuit(circuitDef);
     console.log(new Date(), 'Calculating witness');
     const witness = circuit.calculateWitness(testInput);
     console.log('Hash calculated by JS     :', testInput.pubSolnHash);
     console.log('Hash calculated by circuit:', witness[circuit.getSignalIdx('main.solnHashOut')]);
+    */
     console.log(new Date(), 'Verifying proof');
     const valid = snarkjs.groth.isValid(verifyingKey, proof, publicSignals);
     console.log(new Date(), 'Done');
