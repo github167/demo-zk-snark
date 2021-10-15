@@ -35,13 +35,6 @@ node build/mastermind/src/test_js_verification.js \
 
 ```
 
-lesson learn
-
-1. circom.compile() -> circuit
-2. circuit=snarkjs.circuit(circuitJson) -> setup=snarkjs.groth.setup(circuit) -> extract setup.vk_proof and setup.vk_verifier
-3. prepare testInput -> witness=snarkjs.Circuit(circuitDef).calculateWitness(testInput) -> {proof, publicsignals}=snarkjs.groth.genProof(pk.json, witness)
-4. answer=snarkjs.groth.isValid(vk.json, proof, publicSignals)
-
 3. generate our own keys and test
 ```
 cd my
@@ -50,4 +43,9 @@ node 2-pkvk.js
 node 3-genProof.js
 node 4-verify.js
 ```
+lesson learn
 
+1. circom.compile() -> circuit
+2. circuit=snarkjs.circuit(circuitJson) -> setup=snarkjs.groth.setup(circuit) -> extract setup.vk_proof and setup.vk_verifier
+3. prepare testInput -> witness=snarkjs.Circuit(circuitDef).calculateWitness(testInput) -> {proof, publicsignals}=snarkjs.groth.genProof(pk.json, witness)
+4. answer=snarkjs.groth.isValid(vk.json, proof, publicSignals)
