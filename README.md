@@ -3,7 +3,7 @@ Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/node
 
 1. snarkjs
 ```
-curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/hello-world-zk-dapp/init.sh | sh
+curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/mastermind/init.sh | sh
 ```
 
 2. test
