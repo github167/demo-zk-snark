@@ -45,7 +45,7 @@ node 4-verify.js
 ```
 lesson learn
 
-1. circom.compile() -> circuit
+1. circuitJson=circom.compile(circuit.circom)
 2. circuit=snarkjs.circuit(circuitJson) -> setup=snarkjs.groth.setup(circuit) -> extract setup.vk_proof and setup.vk_verifier
 3. prepare testInput -> witness=snarkjs.Circuit(circuitDef).calculateWitness(testInput) -> {proof, publicsignals}=snarkjs.groth.genProof(pk.json, witness)
 4. answer=snarkjs.groth.isValid(vk.json, proof, publicSignals)
