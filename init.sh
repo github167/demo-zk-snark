@@ -1,5 +1,6 @@
-#from https://github.com/iden3/circom_old/blob/master/TUTORIAL.md
+# from https://github.com/iden3/circom_old/blob/master/TUTORIAL.md
 # youtube: https://www.youtube.com/watch?v=Oaub9QwwgCA (Introduction to zk-SNARKs with circom and snarkjs examples)
+# concept: https://media.consensys.net/introduction-to-zksnarks-with-examples-3283b554fc3b
 
 git clone https://github.com/iden3/snarkjs
 cd snarkjs
