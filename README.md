@@ -5,3 +5,8 @@ Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/node
 ```
 curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/snarkjs-demo/init.sh | sh
 ```
+
+2. use js to verify, using the resources in the previous steps
+```
+curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/snarkjs-demo/factorize.sh | sh
+```
