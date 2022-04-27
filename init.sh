@@ -14,17 +14,30 @@ npm install -g snarkjs
 
 # prove that we know we are able to factorize c e.g. know a and b s.t. c==a*b
 cat << EOF > circuit.circom
-template Multiplier() {
-    signal private input a;
-    signal private input b;
-    signal output c;
-
-    c <== a*b;
-}
-component main = Multiplier();
+   template Multiplier() {
+       signal private input a;
+       signal private input b;
+       signal output c;
+       signal inva;
+       signal invb;
+       
+       inva <-- 1/(a-1);
+       (a-1)*inva === 1;
+       
+       invb <-- 1/(b-1);
+       (b-1)*invb === 1;    
+       
+       c <== a*b;
+   }
+   component main = Multiplier();
 EOF
-cat << EOF > input.json
-{"a": 3, "b": 11}
+
+cat << EOF > input-ok.json
+{"a": 2, "b": 17}
+EOF
+
+cat << EOF > input-err.json
+{"a": 1, "b": 34}
 EOF
 
 # gen circuit
@@ -36,26 +49,30 @@ snarkjs r1cs export json circuit.r1cs circuit.json
 # gen proof and verification keys
 snarkjs zkey new circuit.r1cs powersOfTau28_hez_final_10.ptau circuit_final.zkey
 
-# gen sol
-snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
-
-# gen proof.json public.json
-snarkjs groth16 fullprove input.json circuit.wasm circuit_final.zkey
-
 #extract verification key
 snarkjs zkey export verificationkey circuit_final.zkey verification_key.json
 
-# verify!
+# gen proof.json public.json
+snarkjs groth16 fullprove input-ok.json circuit.wasm circuit_final.zkey
+
+# verify, should be ok
 snarkjs groth16 verify verification_key.json public.json proof.json
 
-# c change to 34 and so a*b <> c, proof fail
+# use err input, should fail
+snarkjs groth16 fullprove input-ok.json circuit.wasm circuit_final.zkey
+snarkjs groth16 verify verification_key.json public.json proof.json
+
+# c change to 35 and so a*b <> c, proof fail
 cat << EOF > public-34.json
 [
- "34"
+ "35"
 ]
 EOF
 
-snarkjs groth16 verify verification_key.json public-34.json proof.json
+snarkjs groth16 verify verification_key.json public-35.json proof.json
+
+# gen sol
+snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
 
 # gen witness
 snarkjs wtns calculate circuit.wasm input.json witness.wtns
@@ -63,5 +80,4 @@ snarkjs wtns export json witness.wtns witness.json
 cat witness.json
 
 # gen proof.json and public.json through witness.wtns
-
 snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json
