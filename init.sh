@@ -63,7 +63,7 @@ snarkjs groth16 fullprove input-ok.json circuit.wasm circuit_final.zkey
 snarkjs groth16 verify verification_key.json public.json proof.json
 
 # c change to 35 and so a*b <> c, proof fail
-cat << EOF > public-34.json
+cat << EOF > public-35.json
 [
  "35"
 ]
