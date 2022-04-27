@@ -75,9 +75,12 @@ snarkjs groth16 verify verification_key.json public-35.json proof.json
 snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
 
 # gen witness
-snarkjs wtns calculate circuit.wasm input.json witness.wtns
+snarkjs wtns calculate circuit.wasm input-ok.json witness.wtns
 snarkjs wtns export json witness.wtns witness.json
 cat witness.json
 
 # gen proof.json and public.json through witness.wtns
 snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json
+
+# gen data for solidity for testing
+snarkjs zkey export soliditycalldata public.json proof.json
