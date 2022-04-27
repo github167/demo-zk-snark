@@ -12,6 +12,7 @@ wget https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_10.ptau
 npm install -g circom
 npm install -g snarkjs
 
+# prove that we know we are able to factorize c e.g. know a and b s.t. c==a*b
 cat << EOF > circuit.circom
 template Multiplier() {
     signal private input a;
@@ -46,6 +47,15 @@ snarkjs zkey export verificationkey circuit_final.zkey verification_key.json
 
 # verify!
 snarkjs groth16 verify verification_key.json public.json proof.json
+
+# c change to 34 and so a*b <> c, proof fail
+cat << EOF > public-34.json
+[
+ "34"
+]
+EOF
+
+snarkjs groth16 verify verification_key.json public-34.json proof.json
 
 # gen witness
 snarkjs wtns calculate circuit.wasm input.json witness.wtns
