@@ -1,4 +1,4 @@
-mkdir ~/js && cd ~/js
+mkdir ~/html && cd ~/html
 npm init -y
 npm install snarkjs
 
@@ -110,6 +110,6 @@ async function calculateProof(w1, w2, numToFactorize) {
 </html>  
 EOF
 
-cd ~/js
+cd ~/html
 #npx http-server
 
