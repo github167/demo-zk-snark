@@ -5,7 +5,8 @@ npm install snarkjs
 # copy the necessary resources
 cp ~/snarkjs/build/circuit.wasm .
 cp ~/snarkjs/build/circuit_final.zkey .
-cp ~/snarkjs/build/verification_key.json .
+snarkjs zkey export verificationkey circuit_final.zkey verification_key.json
+
 
 # js to prove
 cat << "EOF" > index.js
