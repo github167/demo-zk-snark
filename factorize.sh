@@ -2,10 +2,12 @@ mkdir ~/js && cd ~/js
 npm init -y
 npm install snarkjs
 
+# copy the necessary resources
 cp ~/snarkjs/build/circuit.wasm .
 cp ~/snarkjs/build/circuit_final.zkey .
 cp ~/snarkjs/build/verification_key.json .
 
+# js to prove
 cat << "EOF" > index.js
 const snarkjs = require("snarkjs");
 const fs = require("fs");
@@ -44,6 +46,7 @@ EOF
 
 node index.js
 
+# web page to prove
 cp node_modules/snarkjs/build/snarkjs.min.js .
 
 cat << EOF > index.html
