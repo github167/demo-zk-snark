@@ -29,6 +29,7 @@ snarkjs wtns calculate circuit.wasm input.json witness.wtns
 snarkjs g16p circuit_final.zkey witness.wtns proof.json public.json
 
 # view the wtns as json
+snarkjs wtns check circuit.r1cs witness.wtns
 snarkjs wtns export json witness.wtns witness.json
 cat witness.json
 ```
