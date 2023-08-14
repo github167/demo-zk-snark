@@ -1,3 +1,7 @@
+1. https://github.com/MarcusWentz/zkSnarks_circom_snarkj
+2. git clone to your desktop
+3. npm install
+   
 ```
 circom circuit.circom --r1cs --wasm
 snarkjs g16s circuit.r1cs pot12_final.ptau circuit_final.zkey
