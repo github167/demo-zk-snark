@@ -1,4 +1,4 @@
-1. https://github.com/MarcusWentz/zkSnarks_circom_snarkjs
+1. From: https://github.com/MarcusWentz/zkSnarks_circom_snarkjs
 2. git clone to your desktop
 3. npm install
    
