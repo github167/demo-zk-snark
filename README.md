@@ -1,7 +1,7 @@
 1. From: https://github.com/MarcusWentz/zkSnarks_circom_snarkjs
 2. git clone to your desktop
 3. npm install
-4. commands   
+4. test using command line
 ```
 # create r1cs for keygen, wasm for proof
 circom circuit.circom --r1cs --wasm
@@ -33,4 +33,7 @@ snarkjs wtns check circuit.r1cs witness.wtns
 snarkjs wtns export json witness.wtns witness.json
 cat witness.json
 ```
-5. Reference: https://github.com/iden3/snarkjs
+5. test using javascript: 
+6. test using html
+
+7. Reference: https://github.com/iden3/snarkjs
