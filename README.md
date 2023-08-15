@@ -35,11 +35,12 @@ cat witness.json
 ```
 5. test using javascript
 ```
-fdgfdgfd
+node index.js
 ```
 7. test using html
 ```
 cp node_modules/snarkjs/build/snarkjs.min.js .
 ```
+Double the htm file!
 
 9. Reference: https://github.com/iden3/snarkjs
