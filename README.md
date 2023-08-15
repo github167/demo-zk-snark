@@ -38,5 +38,8 @@ cat witness.json
 fdgfdgfd
 ```
 7. test using html
+```
+cp node_modules/snarkjs/build/snarkjs.min.js .
+```
 
-8. Reference: https://github.com/iden3/snarkjs
+9. Reference: https://github.com/iden3/snarkjs
