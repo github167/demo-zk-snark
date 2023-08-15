@@ -33,7 +33,10 @@ snarkjs wtns check circuit.r1cs witness.wtns
 snarkjs wtns export json witness.wtns witness.json
 cat witness.json
 ```
-5. test using javascript: 
-6. test using html
+5. test using javascript
+```
+fdgfdgfd
+```
+7. test using html
 
-7. Reference: https://github.com/iden3/snarkjs
+8. Reference: https://github.com/iden3/snarkjs
