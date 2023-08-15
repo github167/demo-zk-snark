@@ -37,10 +37,9 @@ cat witness.json
 ```
 node index.js
 ```
-7. test using html
+6. test using html
 ```
 cp node_modules/snarkjs/build/snarkjs.min.js .
+# launch index.htm in browser!
 ```
-Double the htm file!
-
-9. Reference: https://github.com/iden3/snarkjs
+7. Reference: https://github.com/iden3/snarkjs
