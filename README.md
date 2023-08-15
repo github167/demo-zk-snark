@@ -1,6 +1,9 @@
 1. From: https://github.com/MarcusWentz/zkSnarks_circom_snarkjs
 2. git clone to your desktop
-3. npm install
+3. install node modules
+```
+npm install
+```
 4. test using command line
 ```
 # create r1cs for keygen, wasm for proof
