@@ -2,7 +2,7 @@
 2. git clone to desktop
 ```
 git clone -b sudoku-client https://github.com/github167/demo-zk-snark
-cd sudoku-client
+cd demo-zk-snark
 ```
 3. install
 ```
