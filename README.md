@@ -1,6 +1,11 @@
 1. https://github.com/web3-master/zksnark-sudoku
+2. git clone to desktop
 ```
-git clone -b sudoku-client https://github.com/github167/demo-zk-snark 
+git clone -b sudoku-client https://github.com/github167/demo-zk-snark
+cd sudoku-client
+```
+3. install
+```
 npm install
 npm run dev
 ```
