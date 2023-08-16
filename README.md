@@ -10,4 +10,6 @@ npm install
 npm run dev
 ```
 2. surf to http://localhost:3000
-3. new puzzle->solve puzzle
+3. New puzzle->Solve puzzle->Save puzzle
+4. Generate proof->Save proof
+5. Load puzzle->Load proof->Verify proof
