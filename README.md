@@ -47,5 +47,10 @@ cp node_modules/snarkjs/build/snarkjs.min.js .
 ```
 7. Reference: https://github.com/iden3/snarkjs
 
+Playground
+
 8. Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
-9. execute
+```
+curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/minimal-snarkjs/init.sh | sh
+cd demo-zk-snark
+```
