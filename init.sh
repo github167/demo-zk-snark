@@ -1,5 +1,5 @@
 git clone https://github.com/github167/demo-zk-snark -b minimal-snarkjs
-cd demo-zk-snarkjs
+cd demo-zk-snark
 npm install
 
 # create r1cs for keygen, wasm for proof
