@@ -46,3 +46,6 @@ cp node_modules/snarkjs/build/snarkjs.min.js .
 # launch index.htm in browser!
 ```
 7. Reference: https://github.com/iden3/snarkjs
+
+8. Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
+9. execute
