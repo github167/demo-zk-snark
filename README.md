@@ -46,10 +46,11 @@ cp node_modules/snarkjs/build/snarkjs.min.js .
 # launch index.htm in browser!
 ```
 7. Reference: https://github.com/iden3/snarkjs
+8. Another reference: https://github.com/nalinbhardwaj/snarkjs
 
 Playground
 
-8. Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
+9. Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
 ```
 curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/minimal-snarkjs/init.sh | sh
 cd demo-zk-snark
