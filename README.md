@@ -2,6 +2,7 @@
 2. git clone to your desktop
 3. install node modules
 ```
+git clone -b minimal-snarkjs https://github.com/github167/demo-zk-snark
 npm install
 ```
 4. test using command line
