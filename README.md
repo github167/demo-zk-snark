@@ -5,6 +5,7 @@ Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/node
 ```
 curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/mastermind/init.sh | sh
 cd zkmm
+
 ```
 
 2. test from official js
@@ -42,6 +43,7 @@ node 1-compile.js
 node 2-pkvk.js
 node 3-genProof.js
 node 4-verify.js
+
 ```
 lesson learn
 
