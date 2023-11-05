@@ -1,6 +1,8 @@
 
 Goto: https://www.katacoda.com/scenario-examples/courses/environment-usages/nodejs
 
+Original: https://github.com/weijiekoh/zkmm
+
 1. snarkjs
 ```
 curl -LSfs https://raw.githubusercontent.com/github167/demo-zk-snark/mastermind/init.sh | sh
