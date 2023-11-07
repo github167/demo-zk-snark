@@ -1,0 +1,20 @@
+{
+  "name": "zkmm",
+  "version": "1.0.0",
+  "description": "**NOTE**: this project is several years old and uses highly outdated\r libraries. Furthermore, the circuit code was written as a beginner\r to circom and may contain mistakes, which if repeated in other projects,\r may lead to security flaws. Please proceed with discretion.",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "big-integer": "^1.6.36",
+    "circom": "^0.0.24",
+    "circomlib": "^0.0.5",
+    "snarkjs": "^0.1.9",
+    "typescript": "^5.2.2"
+  }
+}
