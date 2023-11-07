@@ -23,11 +23,7 @@ npm run build
 
 3. generate our own keys and test
 ```
-
-node my/1-compile.js
-node my/2-pkvk.js
-node my/3-genProof.js
-node my/4-verify.js
+npm run mybuild
 
 ```
 lesson learn
