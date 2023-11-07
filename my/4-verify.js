@@ -52,4 +52,4 @@ const main = async function () {
         console.log("The proof is not valid");
     }
 };
-
+main();
