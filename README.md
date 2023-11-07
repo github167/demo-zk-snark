@@ -12,6 +12,7 @@ nvm install node
 git clone -b mastermind https://github.com/github167/demo-zk-snark
 cd demo-zk-snark
 npm install
+tsc
 
 ```
 
